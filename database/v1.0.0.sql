@@ -2,9 +2,7 @@
 In entire database status 1-> Active/enable/allowed/yes
 0->Inactive/disable/not allowed/no
 
-1. Pending Invoice,package,subscription management
-2. Pending White labeling management for the reseller.
-3.
+DIDs table does not required any foreign key because when we are doing import at that time it may cause an issue.
 */
 
 DROP TABLE IF EXISTS timezones CASCADE;
@@ -44,7 +42,7 @@ CREATE TABLE countrycode (
   UNIQUE (iso)
 );
 
-INSERT INTO countrycode VALUES (1,'AF','AFGHANISTAN','Afghanistan','AFG',93),(2,'AL','ALBANIA','Albania','ALB',355),(3,'DZ','ALGERIA','Algeria','DZA',213),(4,'AS','AMERICAN SAMOA','American Samoa','ASM',1684),(5,'AD','ANDORRA','Andorra','AND',376),(6,'AO','ANGOLA','Angola','AGO',244),(7,'AI','ANGUILLA','Anguilla','AIA',1264),(8,'AG','ANTIGUA & BARBUDA','Antigua_&_Barbuda','ATG',1268),(9,'AR','ARGENTINA','Argentina','ARG',54),(10,'AM','ARMENIA','Armenia','ARM',374),(11,'AW','ARUBA','Aruba','ABW',297),(12,'AU','AUSTRALIA','Australia','AUS',61),(13,'AT','AUSTRIA','Austria','AUT',43),(14,'AZ','AZERBAIJAN','Azerbaijan','AZE',994),(15,'BS','BAHAMAS','Bahamas','BHS',1242),(16,'BH','BAHRAIN','Bahrain','BHR',973),(17,'BD','BANGLADESH','Bangladesh','BGD',880),(18,'BB','BARBADOS','Barbados','BRB',1246),(19,'BY','BELARUS','Belarus','BLR',375),(20,'BE','BELGIUM','Belgium','BEL',32),(21,'BZ','BELIZE','Belize','BLZ',501),(22,'BJ','BENIN','Benin','BEN',229),(23,'BM','BERMUDA','Bermuda','BMU',1441),(24,'BT','BHUTAN','Bhutan','BTN',975),(25,'BO','BOLIVIA','Bolivia','BOL',591),(26,'BA','BOSNIA AND HERZEGOVINA','Bosnia_and_Herzegovina','BIH',387),(27,'BW','BOTSWANA','Botswana','BWA',267),(28,'BR','BRAZIL','Brazil','BRA',55),(29,'VG','BRITISH VIRGIN ISLANDS','British Virgin Islands','VGB',1284),(30,'BN','BRUNEI','Brunei','BRN',673),(31,'BG','BULGARIA','Bulgaria','BGR',359),(32,'BF','BURKINA FASO','Burkina_Faso','BFA',226),(33,'BI','BURUNDI','Burundi','BDI',257),(34,'KH','CAMBODIA','Cambodia','KHM',855),(35,'CM','CAMEROON','Cameroon','CMR',237),(36,'CA','CANADA','Canada','CAN',1),(37,'CV','CAPE VERDE','Cape Verde','CPV',238),(38,'KY','CAYMAN ISLANDS','Cayman Islands','CYM',1345),(39,'CF','CENTRAL AFRICAN REPUBLIC','Central African Republic','CAF',236),(40,'TD','CHAD','Chad','TCD',235),(41,'CL','CHILE','Chile','CHL',56),(42,'CN','CHINA','China','CHN',86),(43,'CO','COLOMBIA','Colombia','COL',57),(44,'KM','COMOROS','Comoros','COM',269),(45,'CG','CONGO','Congo','COG',242),(46,'CR','COSTA RICA','Costa Rica','CRI',506),(47,'HR','CROATIA','Croatia','HRV',385),(48,'CU','CUBA','Cuba','CUB',53),(49,'CY','CYPRUS','Cyprus','CYP',357),(50,'CZ','CZECH REPUBLIC','Czech Republic','CZE',420),(51,'CD','DEMOCRATIC REPUBLIC','Democratic Republic','COD',243),(52,'DK','DENMARK','Denmark','DNK',45),(53,'DJ','DJIBOUTI','Djibouti','DJI',253),(54,'DM','DOMINICA','Dominica','DMA',1767),(55,'DO','DOMINICAN REPUBLIC','Dominican republic','DOM',1809),(56,'EC','ECUADOR','Ecuador','ECU',593),(57,'EG','EGYPT','Egypt','EGY',20),(58,'SV','EL SALVADOR','El Salvador','SLV',503),(59,'GQ','EQUATORIAL GUINEA','Equatorial Guinea','GNQ',240),(60,'ER','ERITREA','Eritrea','ERI',291),(61,'EE','ESTONIA','Estonia','EST',372),(62,'ET','ETHIOPIA','Ethiopia','ETH',251),(63,'FO','FAEROE ISLANDS','Faeroe Islands','FRO',298),(64,'FJ','FIJI ISLANDS','Fiji Islands','FJI',67970),(65,'FI','FINLAND','Finland','FIN',358),(66,'FR','FRANCE','France','FRA',33),(67,'GF','FRENCH GUIANA','French Guiana','GUF',594),(68,'PF','FRENCH POLYNESIA','French Polynesia','PYF',689),(69,'GA','GABON','Gabon','GAB',241),(70,'GM','GAMBIA','Gambia','GMB',220),(71,'GE','GEORGIA','Georgia','GEO',995),(72,'DE','GERMANY','Germany','DEU',49),(73,'GH','GHANA','Ghana','GHA',233),(74,'GI','GIBRALTAR','Gibraltar','GIB',350),(75,'GR','GREECE','Greece','GRC',30),(76,'GD','GRENADA','Grenada','GRD',1473),(77,'GP','GUADELOUPE','Guadeloupe','GLP',590),(78,'GU','GUAM','Guam','GUM',1671),(79,'GT','GUATEMALA','Guatemala','GTM',502),(80,'GN','GUINEA','Guinea','GIN',224),(81,'GW','GUINEA BISSAU','Guinea Bissau','GNB',245),(82,'GY','GUYANA','Guyana','GUY',592),(83,'HT','HAITI','Haiti','HTI',509),(84,'HN','HONDURAS','Honduras','HND',504),(85,'HK','HONG KONG','Hong Kong','HKG',852),(86,'HU','HUNGARY','Hungary','HUN',36),(87,'IS','ICELAND','Iceland','ISL',354),(88,'IN','INDIA','India','IND',91),(89,'ID','INDONESIA','Indonesia','IDN',62),(90,'IR','IRAN','Iran','IRN',98),(91,'IQ','IRAQ','Iraq','IRQ',964),(92,'IE','IRELAND','Ireland','IRL',353),(93,'IL','ISRAEL','Israel','ISR',972),(94,'IT','ITALY','Italy','ITA',39),(95,'CI','IVORY COAST','Ivory Coast','CIV',225),(96,'JM','JAMAICA','Jamaica','JAM',1876),(97,'JP','JAPAN','Japan','JPN',81),(98,'JO','JORDAN','Jordan','JOR',962),(99,'KZ','KAZAKHSTAN','Kazakhstan','KAZ',7),(100,'KE','KENYA','Kenya','KEN',254),(101,'KS','KOSOVO','Kosovo','KSV',38128),(102,'KW','KUWAIT','Kuwait','KWT',965),(103,'KG','KYRGYZSTAN','Kyrgyzstan','KGZ',996),(104,'LA','LAOS','Laos','LAO',856),(105,'LV','LATVIA','Latvia','LVA',371),(106,'LB','LEBANON','Lebanon','LBN',961),(107,'LS','LESOTHO','Lesotho','LSO',266),(108,'LR','LIBERIA','Liberia','LBR',231),(109,'LY','LIBYA','Libya','LBY',218),(110,'LI','LIECHTENSTEIN','Liechtenstein','LIE',423),(111,'LT','LITHUANIA','Lithuania','LTU',370),(112,'LU','LUXEMBOURG','Luxembourg','LUX',352),(113,'MO','MACAU','Macau','MAC',853),(114,'MK','MACEDONIA','Macedonia','MKD',389),(115,'MG','MADAGASCAR','Madagascar','MDG',261),(116,'MW','MALAWI','Malawi','MWI',265),(117,'MY','MALAYSIA','Malaysia','MYS',60),(118,'ML','MALI','Mali','MLI',223),(119,'MT','MALTA','Malta','MLT',356),(120,'MH','MARSHALL ISLANDS','Marshall Islands','MHL',692),(121,'MQ','MARTINIQUE','Martinique','MTQ',596),(122,'MR','MAURITANIA','Mauritania','MRT',222),(123,'MU','MAURITIUS','Mauritius','MUS',230),(124,'MX','MEXICO','Mexico','MEX',52),(125,'FM','MICRONESIA','Micronesia','FSM',691),(126,'MD','MOLDOVA','Moldova','MDA',373),(127,'MC','MONACO','Monaco','MCO',377),(128,'MN','MONGOLIA','Mongolia','MNG',976),(129,'ME','MONTENEGRO','Montenegro','MNE',382),(130,'MS','MONTSERRAT','Montserrat','MSR',1664),(131,'MA','MOROCCO','Morocco','MAR',212),(132,'MZ','MOZAMBIQUE','Mozambique','MOZ',258),(133,'MM','MYANMAR','Myanmar','MMR',95),(134,'NA','NAMIBIA','Namibia','NAM',264),(135,'NP','NEPAL','Nepal','NPL',977),(136,'NL','NETHERLANDS','Netherlands','NLD',31),(137,'NC','NEW CALEDONIA','New Caledonia','NCL',687),(138,'NZ','NEW ZEALAND','New Zealand','NZL',64),(139,'NI','NICARAGUA','Nicaragua','NIC',505),(140,'NE','NIGER','Niger','NER',227),(141,'NG','NIGERIA','Nigeria','NGA',234),(142,'MP','NO. MARIANA ISLANDS','No. Mariana Islands','MNP',1670),(143,'KP','NORTH KOREA','North Korea','PRK',850),(144,'NO','NORWAY','Norway','NOR',47),(145,'OM','OMAN','Oman','OMN',968),(146,'PK','PAKISTAN','Pakistan','PAK',92),(147,'PW','PALAU','Palau','PLW',680),(149,'PA','PANAMA','Panama','PAN',507),(150,'PY','PARAGUAY','Paraguay','PRY',595),(151,'PE','PERU','Peru','PER',51),(152,'PH','PHILIPPINES','Philippines','PHL',63),(153,'PL','POLAND','Poland','POL',48),(154,'PT','PORTUGAL','Portugal','PRT',351),(155,'PR','PUERTO RICO','Puerto Rico','PRI',1787),(156,'QA','QATAR','Qatar','QAT',974),(157,'RE','REUNION ISLAND','Reunion Island','REU',262),(158,'RO','ROMANIA','Romania','ROM',40),(159,'RU','RUSSIAN FEDERATION','Russian Federation','RUS',70),(160,'RW','RWANDA','Rwanda','RWA',250),(161,'SM','SAN MARINO','San Marino','SMR',378),(162,'SA','SAUDI ARABIA','Saudi Arabia','SAU',966),(163,'SN','SENEGAL','Senegal','SEN',221),(164,'RS','SERBIA','Serbia','SRB',381),(165,'SC','SEYCHELLES ISLANDS','Seychelles Islands','SYC',248),(166,'SL','SIERRA LEONE','Sierra Leone','SLE',232),(167,'SG','SINGAPORE','Singapore','SGP',65),(168,'SK','SLOVAKIA','Slovakia','SVK',421),(169,'SI','SLOVENIA','Slovenia','SVN',386),(170,'SO','SOMALIA','Somalia','SOM',252),(171,'ZA','SOUTH AFRICA','South Africa','ZAF',27),(172,'KR','SOUTH KOREA','South Korea','KOR',82),(173,'SS','SOUTH SUDAN','South Sudan','SSD',211),(174,'ES','SPAIN','Spain','ESP',34),(175,'LK','SRI LANKA','Sri Lanka','LKA',94),(176,'KN','ST. KITTS','St. Kitts','KNA',1869),(177,'LC','ST. LUCIA','St. Lucia','LCA',1758),(178,'MF','ST. MARTIN','St. Martin','MAF',1721),(179,'PM','ST. PIERRE & MIQUELON','St. Pierre & Miquelon','SPM',508),(180,'VC','ST. VINCENT','St. Vincent','VCT',1784),(181,'SD','SUDAN','Sudan','SDN',249),(182,'SR','SURINAME','Suriname','SUR',597),(183,'SZ','SWAZILAND','Swaziland','SWZ',268),(184,'SE','SWEDEN','Sweden','SWE',46),(185,'CH','SWITZERLAND','Switzerland','CHE',41),(186,'SY','SYRIA','Syria','SYR',963),(187,'TW','TAIWAN','Taiwan','TWN',886),(188,'TJ','TAJIKISTAN','Tajikistan','TJK',992),(189,'TZ','TANZANIA','Tanzania','TZA',255),(190,'TH','THAILAND','Thailand','THA',66),(192,'TT','TRINIDAD & TOBAGO','Trinidad & Tobago','TTO',1868),(193,'TN','TUNISIA','Tunisia','TUN',216),(194,'TR','TURKEY','Turkey','TUR',90),(195,'TM','TURKMENISTAN','Turkmenistan','TKM',7370),(196,'TC','TURKS & CAICOS ISLANDS','Turks & Caicos Islands','TCA',1649),(197,'UG','UGANDA','Uganda','UGA',256),(198,'UA','UKRAINE','Ukraine','UKR',380),(199,'AE','UNITED ARAB EMIRATES','United Arab Emirates','ARE',971),(200,'GB','UNITED KINGDOM','United Kingdom','GBR',44),(201,'UY','URUGUAY','Uruguay','URY',598),(202,'VI','US VIRGIN ISLANDS','Us Virgin Islands','VIR',1340),(203,'US','United States','United States','USA',1),(204,'UZ','UZBEKISTAN','Uzbekistan','UZB',998),(205,'VE','VENEZUELA','Venezuela','VEN',58),(206,'VN','VIETNAM','Vietnam','VNM',84),(207,'YE','YEMEN','Yemen','YEM',967),(208,'ZM','ZAMBIA','Zambia','ZMB',260),(209,'ZW','ZIMBABWE','Zimbabwe','ZWE',263),(211,'A','ASCENSION','Ascension','ASC',247),(212,'CK','COOK ISLANDS','Cook Islands','COK',682),(213,'TL','EAST TIMOR','EastTimor','TLS',670),(214,'FK','FALKLAND ISLANDS','FalklandIslands','FLK',500),(215,'GL','GREENLAND','GreenLand','GRL',299),(216,'KI','KIRIBATI','Kiribati','KIR',686),(217,'MV','MALDIVES','Maldives','MDV',960),(218,'NR','NAURU','Nauru','NRU',674),(223,'IO','DIEGO GARCIA','Diego Garcia','IOT',246),(224,'NU','NIUE','Niue','NIU',683),(225,'PS','PALESTINE','Palestine','PSE',970),(226,'TK','TOKELAU','Tokelau','TKL',690),(227,'TV','TUVALU','Tuvalu','TUV',688),(228,'VU','VANUATU','Vanuatu','VUT',678),(229,'VA','VATICAN','Vatican','VAT',379),(230,'WF','WALLIS AND FUTUNA','Wallis and Futuna','WLF',681),(231,'SH','SAINT HELENA','Saint Helena','SHN',290),(232,'AQ','ANTARCTICA','antarctica','ATA',672),(233,'ST','SAO TOME AND PRINCIPE','Sao Tome And Principe','STP',239);
+INSERT INTO countrycode VALUES (1,'AF','AFGHANISTAN','Afghanistan','AFG',93),(2,'AL','ALBANIA','Albania','ALB',355),(3,'DZ','ALGERIA','Algeria','DZA',213),(4,'AS','AMERICAN SAMOA','American Samoa','ASM',1684),(5,'AD','ANDORRA','Andorra','AND',376),(6,'AO','ANGOLA','Angola','AGO',244),(7,'AI','ANGUILLA','Anguilla','AIA',1264),(8,'AG','ANTIGUA & BARBUDA','Antigua_&_Barbuda','ATG',1268),(9,'AR','ARGENTINA','Argentina','ARG',54),(10,'AM','ARMENIA','Armenia','ARM',374),(11,'AW','ARUBA','Aruba','ABW',297),(12,'AU','AUSTRALIA','Australia','AUS',61),(13,'AT','AUSTRIA','Austria','AUT',43),(14,'AZ','AZERBAIJAN','Azerbaijan','AZE',994),(15,'BS','BAHAMAS','Bahamas','BHS',1242),(16,'BH','BAHRAIN','Bahrain','BHR',973),(17,'BD','BANGLADESH','Bangladesh','BGD',880),(18,'BB','BARBADOS','Barbados','BRB',1246),(19,'BY','BELARUS','Belarus','BLR',375),(20,'BE','BELGIUM','Belgium','BEL',32),(21,'BZ','BELIZE','Belize','BLZ',501),(22,'BJ','BENIN','Benin','BEN',229),(23,'BM','BERMUDA','Bermuda','BMU',1441),(24,'BT','BHUTAN','Bhutan','BTN',975),(25,'BO','BOLIVIA','Bolivia','BOL',591),(26,'BA','BOSNIA AND HERZEGOVINA','Bosnia_and_Herzegovina','BIH',387),(27,'BW','BOTSWANA','Botswana','BWA',267),(28,'BR','BRAZIL','Brazil','BRA',55),(29,'VG','BRITISH VIRGIN ISLANDS','British Virgin Islands','VGB',1284),(30,'BN','BRUNEI','Brunei','BRN',673),(31,'BG','BULGARIA','Bulgaria','BGR',359),(32,'BF','BURKINA FASO','Burkina_Faso','BFA',226),(33,'BI','BURUNDI','Burundi','BDI',257),(34,'KH','CAMBODIA','Cambodia','KHM',855),(35,'CM','CAMEROON','Cameroon','CMR',237),(36,'CA','CANADA','Canada','CAN',1),(37,'CV','CAPE VERDE','Cape Verde','CPV',238),(38,'KY','CAYMAN ISLANDS','Cayman Islands','CYM',1345),(39,'CF','CENTRAL AFRICAN REPUBLIC','Central African Republic','CAF',236),(40,'TD','CHAD','Chad','TCD',235),(41,'CL','CHILE','Chile','CHL',56),(42,'CN','CHINA','China','CHN',86),(43,'CO','COLOMBIA','Colombia','COL',57),(44,'KM','COMOROS','Comoros','COM',269),(45,'CG','CONGO','Congo','COG',242),(46,'CR','COSTA RICA','Costa Rica','CRI',506),(47,'HR','CROATIA','Croatia','HRV',385),(48,'CU','CUBA','Cuba','CUB',53),(49,'CY','CYPRUS','Cyprus','CYP',357),(50,'CZ','CZECH REPUBLIC','Czech Republic','CZE',420),(51,'CD','DEMOCRATIC REPUBLIC','Democratic Republic','COD',243),(52,'DK','DENMARK','Denmark','DNK',45),(53,'DJ','DJIBOUTI','Djibouti','DJI',253),(54,'DM','DOMINICA','Dominica','DMA',1767),(55,'DO','DOMINICAN REPUBLIC','Dominican republic','DOM',1809),(56,'EC','ECUADOR','Ecuador','ECU',593),(57,'EG','EGYPT','Egypt','EGY',20),(58,'SV','EL SALVADOR','El Salvador','SLV',503),(59,'GQ','EQUATORIAL GUINEA','Equatorial Guinea','GNQ',240),(60,'ER','ERITREA','Eritrea','ERI',291),(61,'EE','ESTONIA','Estonia','EST',372),(62,'ET','ETHIOPIA','Ethiopia','ETH',251),(63,'FO','FAEROE ISLANDS','Faeroe Islands','FRO',298),(64,'FJ','FIJI ISLANDS','Fiji Islands','FJI',67970),(65,'FI','FINLAND','Finland','FIN',358),(66,'FR','FRANCE','France','FRA',33),(67,'GF','FRENCH GUIANA','French Guiana','GUF',594),(68,'PF','FRENCH POLYNESIA','French Polynesia','PYF',689),(69,'GA','GABON','Gabon','GAB',241),(70,'GM','GAMBIA','Gambia','GMB',220),(71,'GE','GEORGIA','Georgia','GEO',995),(72,'DE','GERMANY','Germany','DEU',49),(73,'GH','GHANA','Ghana','GHA',233),(74,'GI','GIBRALTAR','Gibraltar','GIB',350),(75,'GR','GREECE','Greece','GRC',30),(76,'GD','GRENADA','Grenada','GRD',1473),(77,'GP','GUADELOUPE','Guadeloupe','GLP',590),(78,'GU','GUAM','Guam','GUM',1671),(79,'GT','GUATEMALA','Guatemala','GTM',502),(80,'GN','GUINEA','Guinea','GIN',224),(81,'GW','GUINEA BISSAU','Guinea Bissau','GNB',245),(82,'GY','GUYANA','Guyana','GUY',592),(83,'HT','HAITI','Haiti','HTI',509),(84,'HN','HONDURAS','Honduras','HND',504),(85,'HK','HONG KONG','Hong Kong','HKG',852),(86,'HU','HUNGARY','Hungary','HUN',36),(87,'IS','ICELAND','Iceland','ISL',354),(88,'IN','INDIA','India','IND',91),(89,'ID','INDONESIA','Indonesia','IDN',62),(90,'IR','IRAN','Iran','IRN',98),(91,'IQ','IRAQ','Iraq','IRQ',964),(92,'IE','IRELAND','Ireland','IRL',353),(93,'IL','ISRAEL','Israel','ISR',972),(94,'IT','ITALY','Italy','ITA',39),(95,'CI','IVORY COAST','Ivory Coast','CIV',225),(96,'JM','JAMAICA','Jamaica','JAM',1876),(97,'JP','JAPAN','Japan','JPN',81),(98,'JO','JORDAN','Jordan','JOR',962),(99,'KZ','KAZAKHSTAN','Kazakhstan','KAZ',7),(100,'KE','KENYA','Kenya','KEN',254),(101,'KS','KOSOVO','Kosovo','KSV',38128),(102,'KW','KUWAIT','Kuwait','KWT',965),(103,'KG','KYRGYZSTAN','Kyrgyzstan','KGZ',996),(104,'LA','LAOS','Laos','LAO',856),(105,'LV','LATVIA','Latvia','LVA',371),(106,'LB','LEBANON','Lebanon','LBN',961),(107,'LS','LESOTHO','Lesotho','LSO',266),(108,'LR','LIBERIA','Liberia','LBR',231),(109,'LY','LIBYA','Libya','LBY',218),(110,'LI','LIECHTENSTEIN','Liechtenstein','LIE',423),(111,'LT','LITHUANIA','Lithuania','LTU',370),(112,'LU','LUXEMBOURG','Luxembourg','LUX',352),(113,'MO','MACAU','Macau','MAC',853),(114,'MK','MACEDONIA','Macedonia','MKD',389),(115,'MG','MADAGASCAR','Madagascar','MDG',261),(116,'MW','MALAWI','Malawi','MWI',265),(117,'MY','MALAYSIA','Malaysia','MYS',60),(118,'ML','MALI','Mali','MLI',223),(119,'MT','MALTA','Malta','MLT',356),(120,'MH','MARSHALL ISLANDS','Marshall Islands','MHL',692),(121,'MQ','MARTINIQUE','Martinique','MTQ',596),(122,'MR','MAURITANIA','Mauritania','MRT',222),(123,'MU','MAURITIUS','Mauritius','MUS',230),(124,'MX','MEXICO','Mexico','MEX',52),(125,'FM','MICRONESIA','Micronesia','FSM',691),(126,'MD','MOLDOVA','Moldova','MDA',373),(127,'MC','MONACO','Monaco','MCO',377),(128,'MN','MONGOLIA','Mongolia','MNG',976),(129,'ME','MONTENEGRO','Montenegro','MNE',382),(130,'MS','MONTSERRAT','Montserrat','MSR',1664),(131,'MA','MOROCCO','Morocco','MAR',212),(132,'MZ','MOZAMBIQUE','Mozambique','MOZ',258),(133,'MM','MYANMAR','Myanmar','MMR',95),(134,'NA','NAMIBIA','Namibia','NAM',264),(135,'NP','NEPAL','Nepal','NPL',977),(136,'NL','NETHERLANDS','Netherlands','NLD',31),(137,'NC','NEW CALEDONIA','New Caledonia','NCL',687),(138,'NZ','NEW ZEALAND','New Zealand','NZL',64),(139,'NI','NICARAGUA','Nicaragua','NIC',505),(140,'NE','NIGER','Niger','NER',227),(141,'NG','NIGERIA','Nigeria','NGA',234),(142,'MP','NO. MARIANA ISLANDS','No. Mariana Islands','MNP',1670),(143,'KP','NORTH KOREA','North Korea','PRK',850),(144,'NO','NORWAY','Norway','NOR',47),(145,'OM','OMAN','Oman','OMN',968),(146,'PK','PAKISTAN','Pakistan','PAK',92),(147,'PW','PALAU','Palau','PLW',680),(149,'PA','PANAMA','Panama','PAN',507),(150,'PY','PARAGUAY','Paraguay','PRY',595),(151,'PE','PERU','Peru','PER',51),(152,'PH','PHILIPPINES','Philippines','PHL',63),(153,'PL','POLAND','Poland','POL',48),(154,'PT','PORTUGAL','Portugal','PRT',351),(155,'PR','PUERTO RICO','Puerto Rico','PRI',1787),(156,'QA','QATAR','Qatar','QAT',974),(157,'RE','REUNION ISLAND','Reunion Island','REU',262),(158,'RO','ROMANIA','Romania','ROM',40),(159,'RU','RUSSIAN FEDERATION','Russian Federation','RUS',70),(160,'RW','RWANDA','Rwanda','RWA',250),(161,'SM','SAN MARINO','San Marino','SMR',378),(162,'SA','SAUDI ARABIA','Saudi Arabia','SAU',966),(163,'SN','SENEGAL','Senegal','SEN',221),(164,'RS','SERBIA','Serbia','SRB',381),(165,'SC','SEYCHELLES ISLANDS','Seychelles Islands','SYC',248),(166,'SL','SIERRA LEONE','Sierra Leone','SLE',232),(167,'SG','SINGAPORE','Singapore','SGP',65),(168,'SK','SLOVAKIA','Slovakia','SVK',421),(169,'SI','SLOVENIA','Slovenia','SVN',386),(170,'SO','SOMALIA','Somalia','SOM',252),(171,'ZA','SOUTH AFRICA','South Africa','ZAF',27),(172,'KR','SOUTH KOREA','South Korea','KOR',82),(173,'SS','SOUTH SUDAN','South Sudan','SSD',211),(174,'ES','SPAIN','Spain','ESP',34),(175,'LK','SRI LANKA','Sri Lanka','LKA',94),(176,'KN','ST. KITTS','St. Kitts','KNA',1869),(177,'LC','ST. LUCIA','St. Lucia','LCA',1758),(178,'MF','ST. MARTIN','St. Martin','MAF',1721),(179,'PM','ST. PIERRE & MIQUELON','St. Pierre & Miquelon','SPM',508),(180,'VC','ST. VINCENT','St. Vincent','VCT',1784),(181,'SD','SUDAN','Sudan','SDN',249),(182,'SR','SURINAME','Suriname','SUR',597),(183,'SZ','SWAZILAND','Swaziland','SWZ',268),(184,'SE','SWEDEN','Sweden','SWE',46),(185,'CH','SWITZERLAND','Switzerland','CHE',41),(186,'SY','SYRIA','Syria','SYR',963),(187,'TW','TAIWAN','Taiwan','TWN',886),(188,'TJ','TAJIKISTAN','Tajikistan','TJK',992),(189,'TZ','TANZANIA','Tanzania','TZA',255),(190,'TH','THAILAND','Thailand','THA',66),(192,'TT','TRINIDAD & TOBAGO','Trinidad & Tobago','TTO',1868),(193,'TN','TUNISIA','Tunisia','TUN',216),(194,'TR','TURKEY','Turkey','TUR',90),(195,'TM','TURKMENISTAN','Turkmenistan','TKM',7370),(196,'TC','TURKS & CAICOS ISLANDS','Turks & Caicos Islands','TCA',1649),(197,'UG','UGANDA','Uganda','UGA',256),(198,'UA','UKRAINE','Ukraine','UKR',380),(199,'AE','UNITED ARAB EMIRATES','United Arab Emirates','ARE',971),(200,'GB','UNITED KINGDOM','United Kingdom','GBR',44),(201,'UY','URUGUAY','Uruguay','URY',598),(202,'VI','US VIRGIN ISLANDS','Us Virgin Islands','VIR',1340),(203,'US','UNITED STATES OF AMERICA','United States Of America','USA',1),(204,'UZ','UZBEKISTAN','Uzbekistan','UZB',998),(205,'VE','VENEZUELA','Venezuela','VEN',58),(206,'VN','VIETNAM','Vietnam','VNM',84),(207,'YE','YEMEN','Yemen','YEM',967),(208,'ZM','ZAMBIA','Zambia','ZMB',260),(209,'ZW','ZIMBABWE','Zimbabwe','ZWE',263),(211,'A','ASCENSION','Ascension','ASC',247),(212,'CK','COOK ISLANDS','Cook Islands','COK',682),(213,'TL','EAST TIMOR','EastTimor','TLS',670),(214,'FK','FALKLAND ISLANDS','FalklandIslands','FLK',500),(215,'GL','GREENLAND','GreenLand','GRL',299),(216,'KI','KIRIBATI','Kiribati','KIR',686),(217,'MV','MALDIVES','Maldives','MDV',960),(218,'NR','NAURU','Nauru','NRU',674),(223,'IO','DIEGO GARCIA','Diego Garcia','IOT',246),(224,'NU','NIUE','Niue','NIU',683),(225,'PS','PALESTINE','Palestine','PSE',970),(226,'TK','TOKELAU','Tokelau','TKL',690),(227,'TV','TUVALU','Tuvalu','TUV',688),(228,'VU','VANUATU','Vanuatu','VUT',678),(229,'VA','VATICAN','Vatican','VAT',379),(230,'WF','WALLIS AND FUTUNA','Wallis and Futuna','WLF',681),(231,'SH','SAINT HELENA','Saint Helena','SHN',290),(232,'AQ','ANTARCTICA','antarctica','ATA',672),(233,'ST','SAO TOME AND PRINCIPE','Sao Tome And Principe','STP',239);
 
 DROP TABLE IF EXISTS configuration CASCADE;
 CREATE TABLE configuration (
@@ -122,8 +120,7 @@ CREATE TABLE ip_map (
   prefix varchar(20) NOT NULL DEFAULT '',
   status SMALLINT DEFAULT 1,
   created_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  last_modified_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE (prefix,user_id)
+  last_modified_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 /*
 This table will be used to create report into the system.
@@ -298,6 +295,7 @@ CREATE TABLE users (
   parent_id BIGINT DEFAULT 1,
   company_name VARCHAR(50) DEFAULT NULL,
   timezone_id BIGINT DEFAULT 1,
+  localization_id BIGINT DEFAULT 1,
   rategroup_id BIGINT DEFAULT 1,
   notifications SMALLINT DEFAULT 1,
   enable_ivr SMALLINT DEFAULT 0,
@@ -309,7 +307,9 @@ CREATE TABLE users (
   status SMALLINT NOT NULL DEFAULT 1
 );
 
-insert into users values (1,'admin','test@123','919191919191','','admin@gmail.com',1,0,1,1,1,'cloud2voice','194',1,1,0,0,1,0,'2024-12-09 12:01:25',0,1),(2,'customer','test@123','919191919191','','customer@gmail.com',10,0,2,3,1,'cloud2voice','194',1,1,1,998888,1,2,'2024-12-18 12:01:25',0,1);
+insert into users values 
+(1,'admin','test@123','919191919191','','admin@gmail.com',1,0,1,1,1,'cloud2voice','194',1,1,1,0,0,1,0,'2024-12-09 12:01:25',0,1),
+(2,'customer','test@123','919191919191','','customer@gmail.com',10,0,2,3,1,'cloud2voice','194',1,1,1,1,998888,1,2,'2024-12-18 12:01:25',0,1);
 
 COMMENT ON COLUMN users.user_type IS '1->Admin,2->Reseller,3->User,4->Provider';
 COMMENT ON COLUMN users.login_permission IS '0->No, 1->Yes';
@@ -369,15 +369,16 @@ CREATE TABLE targets (
   id BIGSERIAL PRIMARY KEY,
   target_name varchar(50) DEFAULT NULL,
   target_number varchar(15) DEFAULT NULL,
-  weightage SMALLINT DEFAULT 9,
-  priority SMALLINT DEFAULT 9,
   monthly_flag SMALLINT DEFAULT 0,
   monthly_cap INTEGER DEFAULT 1 CHECK (monthly_cap BETWEEN 1 AND 99999),
+  monthly_current INTEGER DEFAULT 0,
   daily_flag SMALLINT DEFAULT 0,
   daily_cap SMALLINT DEFAULT 1 CHECK (daily_cap BETWEEN 1 AND 9999),
+  daily_current SMALLINT DEFAULT 0,
   hourly_flag SMALLINT DEFAULT 0,
   hourly_cap SMALLINT DEFAULT 1 CHECK (hourly_cap BETWEEN 1 AND 999),
-  max_concurrent SMALLINT DEFAULT 1 CHECK (max_concurrent BETWEEN 1 AND 999),
+  hourly_current SMALLINT DEFAULT 0,
+  cc SMALLINT DEFAULT 1 CHECK (cc BETWEEN 1 AND 999),
   user_id BIGINT DEFAULT 1,
   parent_id BIGINT DEFAULT 1,
   status SMALLINT DEFAULT 1,
@@ -387,35 +388,15 @@ CREATE TABLE targets (
 DROP TABLE IF EXISTS campaign_assignments cascade;
 CREATE TABLE campaign_assignments (
   id BIGSERIAL PRIMARY KEY,
-  campaign_id BIGINT DEFAULT 1,
-  target_id BIGINT DEFAULT 1,
-  target_status SMALLINT DEFAULT 1,
-  user_id BIGINT DEFAULT 1,
-  parent_id BIGINT DEFAULT 1,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-DROP TABLE IF EXISTS current_assignments cascade;
-CREATE TABLE current_assignments (
-  id BIGSERIAL PRIMARY KEY,
+  did_id BIGINT DEFAULT 1,
   campaign_id BIGINT DEFAULT 1,
   target_id BIGINT DEFAULT 1,
   weightage SMALLINT DEFAULT 9,
   priority SMALLINT DEFAULT 9,
-  monthly_flag SMALLINT DEFAULT 0,
-  monthly_cap INTEGER DEFAULT 1 CHECK (monthly_cap BETWEEN 1 AND 99999),
-  monthly_current INTEGER DEFAULT 1 CHECK(monthly_cap BETWEEN 1 AND 99999),
-  daily_flag SMALLINT DEFAULT 0,
-  daily_cap SMALLINT DEFAULT 1 CHECK (daily_cap BETWEEN 1 AND 9999),
-  daily_current INTEGER DEFAULT 1 CHECK(daily_cap BETWEEN 1 AND 9999),
-  hourly_flag SMALLINT DEFAULT 0,
-  hourly_cap SMALLINT DEFAULT 1 CHECK (hourly_cap BETWEEN 1 AND 999),
-  hourly_current INTEGER DEFAULT 1 CHECK(hourly_cap BETWEEN 1 AND 999), 
-  max_concurrent SMALLINT DEFAULT 1 CHECK (max_concurrent BETWEEN 1 AND 999),
   user_id BIGINT DEFAULT 1,
   parent_id BIGINT DEFAULT 1,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  last_modified_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  target_status SMALLINT DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS callerids CASCADE;
@@ -578,6 +559,15 @@ CREATE TABLE stripe_customers(
 
 COMMENT ON COLUMN stripe_customers.status IS '1->Working,2->Not-working';
 
+CREATE TABLE localizations (
+  id BIGSERIAL PRIMARY KEY,
+  name varchar(50) NOT NULL,
+  country_id BIGINT NOT NULL,
+  dst_originate varchar(200) NOT NULL,
+  status SMALLINT NOT NULL DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 ALTER TABLE customer_rates ADD FOREIGN KEY (rategroup_id) REFERENCES rategroups(id) ON UPDATE CASCADE;
 ALTER TABLE customer_rates ADD FOREIGN KEY (parent_id) REFERENCES users (id) ON UPDATE CASCADE;
 
@@ -592,11 +582,6 @@ ALTER TABLE rategroups ADD FOREIGN KEY (parent_id) REFERENCES users(id) ON UPDAT
 ALTER TABLE users ADD FOREIGN KEY (parent_id) REFERENCES users(id);
 ALTER TABLE users ADD FOREIGN KEY (timezone_id) REFERENCES timezones(id) ON UPDATE CASCADE;
 ALTER TABLE users ADD FOREIGN KEY (rategroup_id) REFERENCES rategroups(id) ON UPDATE CASCADE;
-
-ALTER TABLE dids ADD FOREIGN KEY (gateway_id) REFERENCES gateways(id) ON UPDATE CASCADE;
-ALTER TABLE dids ADD FOREIGN KEY (campaign_id) REFERENCES campaigns(id) ON UPDATE CASCADE;
-ALTER TABLE dids ADD FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE;
-ALTER TABLE dids ADD FOREIGN KEY (parent_id) REFERENCES users(id) ON UPDATE CASCADE;
 
 ALTER TABLE gateways ADD FOREIGN KEY(sipprofile_id) REFERENCES sip_profiles(id);
 
